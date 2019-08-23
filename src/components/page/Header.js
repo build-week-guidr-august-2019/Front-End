@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Menu>
       <Menu.Item as={NavLink} name="home" to="/" exact />
-      <Menu.Item as={NavLink} name="trips" to="/trips" />
+      <Menu.Item as={NavLink} name="add trip" to="/trips/add" icon="plus" />
     </Menu>
   );
 };
