@@ -1,52 +1,61 @@
 import React from "react";
-import { Form as SemForm, Button, Grid } from "semantic-ui-react";
-import { Form, withFormik } from "formik";
+import { Button, Grid } from "semantic-ui-react";
+import { Form, Field, withFormik } from "formik";
 import Axios from "axios";
 import * as Yup from "yup";
 
 // Form for logging in.
 
-const UserLoginForm = () => {
+const UserLoginForm = props => {
+  const { errors, touched, status, values } = props;
+
   return (
     <Grid centered columns={3}>
       <Grid.Column>
-        <SemForm as={Form}>
-          <SemForm.Field>
-            <label>Email:</label>
-            <input type="text" name="email" placeholder="Jane Doe" />
-          </SemForm.Field>
-          <SemForm.Field>
-            <label>Password:</label>
-            <input type="text" name="email" placeholder="********" />
-          </SemForm.Field>
+        <Form className="ui form">
+          <div className="field">
+            <label>Username</label>
+            {touched.username && errors.username && (
+              <p className="error">{errors.username}</p>
+            )}
+            <Field type="text" name="username" placeholder="Meriwether Lewis" />
+          </div>
+          <div className="field">
+            <label>Password</label>
+            {touched.password && errors.password && (
+              <p className="error">{errors.password}</p>
+            )}
+            <Field type="text" name="password" placeholder="******" />
+          </div>
           <Button type="submit">Log In</Button>
-        </SemForm>
+        </Form>
       </Grid.Column>
     </Grid>
   );
 };
 
 const FormikForm = withFormik({
-  mapPropsToValues({ email, password }) {
+  mapPropsToValues({ username, password }) {
     return {
-      email: email || "",
+      username: username || "",
       password: password || ""
     };
   },
 
   validationSchema: Yup.object().shape({
-    email: Yup.string()
-      .email("Invalid Email Address.")
-      .required(),
-    password: Yup.string()
-      .min(6, "Password is too short.")
-      .required()
+    username: Yup.string().required("Username is required."),
+    password: Yup.string().required("Password is required.")
   }),
 
-  handleSubmit(values, { setStatus, resetForm }) {
-    Axios.post("https://reqres.in/api/users", values).then(response => {
-      setStatus(response.data);
-      resetForm();
+  handleSubmit(values) {
+    console.log("Submitted.");
+    Axios.post(
+      "https://lambda-guidr.herokuapp.com/api/auth/login",
+      values
+    ).then(response => {
+      // setStatus(response.data);
+      // resetForm();
+      console.log(response);
     });
   }
 })(UserLoginForm);
