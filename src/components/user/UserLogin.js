@@ -1,6 +1,6 @@
 import React from "react";
-import { Form as SemForm, Button } from "semantic-ui-react";
-import { Form, Field, withFormik } from "formik";
+import { Form as SemForm, Button, Grid } from "semantic-ui-react";
+import { Form, withFormik } from "formik";
 import Axios from "axios";
 import * as Yup from "yup";
 
@@ -8,16 +8,21 @@ import * as Yup from "yup";
 
 const UserLoginForm = () => {
   return (
-    <SemForm as={Form}>
-      <SemForm.Field as={Field} type="text" name="email" placeholder="Email" />
-      <SemForm.Field
-        as={Field}
-        type="text"
-        name="password"
-        placeholder="Password"
-      />
-      <Button type="submit" />
-    </SemForm>
+    <Grid centered columns={3}>
+      <Grid.Column>
+        <SemForm as={Form}>
+          <SemForm.Field>
+            <label>Email:</label>
+            <input type="text" name="email" placeholder="Jane Doe" />
+          </SemForm.Field>
+          <SemForm.Field>
+            <label>Password:</label>
+            <input type="text" name="email" placeholder="********" />
+          </SemForm.Field>
+          <Button type="submit">Log In</Button>
+        </SemForm>
+      </Grid.Column>
+    </Grid>
   );
 };
 
@@ -44,6 +49,6 @@ const FormikForm = withFormik({
       resetForm();
     });
   }
-});
+})(UserLoginForm);
 
-export default UserLoginForm;
+export default FormikForm;
