@@ -18,7 +18,7 @@ const UserLoginForm = props => {
             {touched.username && errors.username && (
               <p className="error">{errors.username}</p>
             )}
-            <Field type="text" name="username" placeholder="Meriwether Lewis" />
+            <Field type="text" name="username" placeholder="LewisClark1" />
           </div>
           <div className="field">
             <label>Password</label>
@@ -48,13 +48,10 @@ const FormikForm = withFormik({
   }),
 
   handleSubmit(values) {
-    console.log("Submitted.");
     Axios.post(
       "https://lambda-guidr.herokuapp.com/api/auth/login",
       values
     ).then(response => {
-      // setStatus(response.data);
-      // resetForm();
       console.log(response);
     });
   }
