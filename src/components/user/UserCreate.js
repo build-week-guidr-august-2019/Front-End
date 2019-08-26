@@ -7,7 +7,7 @@ const UserCreate = () => {
     <Grid centered columns={2}>
       <Grid.Column>
         <h2>Register</h2>
-        <UserAuthFormik endpoint="register" />
+        <UserAuthFormik endpoint="register" buttonText="Register" />
       </Grid.Column>
     </Grid>
   );

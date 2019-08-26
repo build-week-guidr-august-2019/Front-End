@@ -5,7 +5,7 @@ import Axios from "axios";
 import * as Yup from "yup";
 
 const UserAuthForm = props => {
-  const { errors, touched } = props;
+  const { errors, touched, buttonText } = props;
 
   return (
     <Form className="ui form">
@@ -23,7 +23,7 @@ const UserAuthForm = props => {
         )}
         <Field type="text" name="password" placeholder="******" />
       </div>
-      <Button type="submit">Log In</Button>
+      <Button type="submit">{buttonText}</Button>
     </Form>
   );
 };
