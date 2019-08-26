@@ -1,11 +1,16 @@
-import React from 'react';
-
-// Form for creating a new user.
+import React from "react";
+import { Grid } from "semantic-ui-react";
+import UserAuthFormik from "./UserAuthForm";
 
 const UserCreate = () => {
   return (
-    <div>UserCreate</div>
-  )
-}
+    <Grid centered columns={2}>
+      <Grid.Column>
+        <h2>Register</h2>
+        <UserAuthFormik endpoint="register" />
+      </Grid.Column>
+    </Grid>
+  );
+};
 
 export default UserCreate;

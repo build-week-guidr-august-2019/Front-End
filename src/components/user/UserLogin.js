@@ -4,8 +4,9 @@ import UserAuthFormik from "./UserAuthForm";
 
 const UserLogin = () => {
   return (
-    <Grid>
+    <Grid centered columns={2}>
       <Grid.Column>
+        <h2>Log In</h2>
         <UserAuthFormik endpoint="login" />
       </Grid.Column>
     </Grid>
