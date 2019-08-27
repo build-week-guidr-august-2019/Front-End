@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Routes from "./Routes";
+import Header from "./components/page/Header";
+import "semantic-ui-css/semantic.min.css";
 import "./App.css";
-import { Route } from "react-router-dom";
-import LoginForm from "./components/login";
-import RegisterForm from "./components/register";
 
 function App() {
   return (
-    <div>
-      <Route path="/login" component={LoginForm} />
-      <Route path="/register" component={RegisterForm} />
+    <div className="App">
+      <Header />
+      <Routes />
     </div>
   );
 }

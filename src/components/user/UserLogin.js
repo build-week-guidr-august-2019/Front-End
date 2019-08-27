@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Grid } from "semantic-ui-react";
+import UserAuthFormik from "./UserAuthForm";
 
-// Form for logging in.
-
-const UserLoginForm = () => {
+const UserLogin = () => {
   return (
-    <div>UserLoginForm</div>
-  )
-}
+    <Grid centered columns={2}>
+      <Grid.Column>
+        <h2>Log In</h2>
+        <UserAuthFormik endpoint="login" buttonText="Log In" />
+      </Grid.Column>
+    </Grid>
+  );
+};
 
-export default UserLoginForm;
+export default UserLogin;
