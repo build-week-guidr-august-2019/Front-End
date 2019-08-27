@@ -23,7 +23,9 @@ const UserAuthForm = props => {
         )}
         <Field type="text" name="password" placeholder="******" />
       </div>
-      <Button type="submit">{buttonText}</Button>
+      <Button type="submit" className="ui primary button">
+        {buttonText}
+      </Button>
     </Form>
   );
 };
@@ -45,9 +47,15 @@ const UserAuthFormik = withFormik({
     Axios.post(
       `https://lambda-guidr.herokuapp.com/api/auth/${props.endpoint}`,
       values
-    ).then(response => {
-      console.log(response);
-    });
+    )
+      .then(response => {
+        if (response.data.token) {
+          props.history.push("/portfolio");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 })(UserAuthForm);
 
