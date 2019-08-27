@@ -6,8 +6,8 @@ import UserCreate from "./components/user/UserCreate";
 const Routes = () => {
   return (
     <>
-      <Route path="/register" component={UserCreate} />
-      <Route path="/login" component={UserLogin} />
+      <Route path="/" exact component={UserLogin} />
+      <Route path="/register" exact component={UserCreate} />
     </>
   );
 };
