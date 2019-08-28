@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Button,
   Container,
@@ -15,8 +15,15 @@ import {
   Visibility
 } from "semantic-ui-react";
 import trip1 from "../../img/trip1.JPG";
+import Axios from "axios";
 
 function Dashboard(props) {
+  useEffect(() => {
+    Axios.get("https://lambda-guidr.herokuapp.com/api/user/trips").then(res => {
+      console.log(res);
+    });
+  }, []);
+
   return (
     <div class="dashboard-container">
       <Container>
