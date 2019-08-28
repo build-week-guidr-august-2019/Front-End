@@ -8,13 +8,16 @@ const UserCreate = props => {
     <Grid centered columns={3} verticalAlign="middle" className="login">
       <Grid.Column>
         <Segment>
-          <h2>Register</h2>
+          <h1>Hello Guide!</h1>
+          <p>Let's get you started!</p>
           <UserAuthFormik
             endpoint="register"
             buttonText="Register"
             {...props}
           />
-          <Link to="/login">Log In</Link>
+          <p>
+            Already have an account? <Link to="/login">Log In!</Link>
+          </p>
         </Segment>
       </Grid.Column>
     </Grid>

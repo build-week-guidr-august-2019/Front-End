@@ -8,9 +8,11 @@ const UserLogin = props => {
     <Grid centered columns={3} verticalAlign="middle" className="login">
       <Grid.Column>
         <Segment>
-          <h2>Log In</h2>
+          <h1>Hello Guide!</h1>
           <UserAuthFormik endpoint="login" buttonText="Log In" {...props} />
-          <Link to="/register">Register</Link>
+          <p>
+            Don't have an account? <Link to="/register">Sign Up!</Link>
+          </p>
         </Segment>
       </Grid.Column>
     </Grid>
