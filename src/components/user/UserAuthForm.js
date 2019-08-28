@@ -47,7 +47,7 @@ const UserAuthFormik = withFormik({
     Axios.post(`/auth/${props.endpoint}`, values)
       .then(response => {
         if (response.data.token) {
-          props.history.push("/portfolio");
+          props.history.push("/dashboard");
         }
       })
       .catch(error => {

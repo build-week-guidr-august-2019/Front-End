@@ -1,12 +1,3 @@
 .App {
   /* text-align: center; */
 }
-
-.error {
-  background: #ff9bac;
-  color: #8e0a0a;
-  font-size: 13px;
-  padding: 10px;
-  width: 100%;
-  border-radius: 3px;
-}

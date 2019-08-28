@@ -8,7 +8,7 @@ import TripCreate from "./components/trip/TripCreate";
 const Routes = () => {
   return (
     <>
-      <Route path="/" exact component={UserLogin} />
+      <Route path="/login" exact component={UserLogin} />
       <Route path="/register" exact component={UserCreate} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/trips/add" component={TripCreate} />
