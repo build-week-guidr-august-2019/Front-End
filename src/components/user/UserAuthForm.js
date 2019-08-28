@@ -23,7 +23,9 @@ const UserAuthForm = props => {
         )}
         <Field type="text" name="password" placeholder="******" />
       </div>
-      <Button type="submit">{buttonText}</Button>
+      <Button type="submit" className="ui primary button">
+        {buttonText}
+      </Button>
     </Form>
   );
 };
@@ -42,9 +44,15 @@ const UserAuthFormik = withFormik({
   }),
 
   handleSubmit(values, { props }) {
-    Axios.post(`/auth/${props.endpoint}`, values).then(response => {
-      console.log(response);
-    });
+    Axios.post(`/auth/${props.endpoint}`, values)
+      .then(response => {
+        if (response.data.token) {
+          props.history.push("/portfolio");
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 })(UserAuthForm);
 
