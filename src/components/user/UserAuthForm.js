@@ -44,10 +44,7 @@ const UserAuthFormik = withFormik({
   }),
 
   handleSubmit(values, { props }) {
-    Axios.post(
-      `https://lambda-guidr.herokuapp.com/api/auth/${props.endpoint}`,
-      values
-    )
+    Axios.post(`/auth/${props.endpoint}`, values)
       .then(response => {
         if (response.data.token) {
           props.history.push("/portfolio");
