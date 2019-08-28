@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Route } from "react-router-dom";
 import UserLogin from "./components/user/UserLogin";
 import UserCreate from "./components/user/UserCreate";
@@ -11,7 +11,7 @@ const Routes = () => {
       <Route path="/login" exact component={UserLogin} />
       <Route path="/register" exact component={UserCreate} />
       <Route path="/dashboard" component={Dashboard} />
-      <Route path="/new-trip" component={TripCreate} />
+      <Route path="/trips/add" component={TripCreate} />
     </>
   );
 };
