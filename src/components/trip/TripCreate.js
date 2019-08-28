@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Form, Field, withFormik } from "formik";
+import Axios from "axios";
 import * as Yup from "yup";
 
 import newTrip from "../../img/trip-pic-1.jpg";
@@ -96,6 +97,23 @@ const newTripSubmission = withFormik({
       .min(200, "200 characters required")
   }),
   handleSubmit(values, { setStatus, resetForm }) {
+    const trip = {
+      user_id: 5,
+      title: values.title,
+      shortDescription: "short description",
+      description: values.description,
+      isProfessional: true,
+      type: 1,
+      duration: 3,
+      distance: 500,
+      date: "2018-11-01"
+    };
+
+    Axios.post("https://lambda-guidr.herokuapp.com/api/trip", trip).then(
+      res => {
+        console.log(res);
+      }
+    );
     alert("Your trip has been accepted", JSON.stringify(values, null, 2));
     resetForm();
   }
