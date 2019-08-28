@@ -42,10 +42,7 @@ const UserAuthFormik = withFormik({
   }),
 
   handleSubmit(values, { props }) {
-    Axios.post(
-      `https://lambda-guidr.herokuapp.com/api/auth/${props.endpoint}`,
-      values
-    ).then(response => {
+    Axios.post(`/auth/${props.endpoint}`, values).then(response => {
       console.log(response);
     });
   }
