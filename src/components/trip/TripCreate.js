@@ -2,51 +2,78 @@ import React, { useEffect, useState } from "react";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 
+import newTrip from "../../img/trip-pic-1.jpg";
+
 // Include TripForm and any trip creation specific logic.
 
 const TripCreate = ({ errors, touched, values, status }) => {
   return (
     <div className="trip-create-form-container">
+      <img src={newTrip}></img>
       <h1>Create A Trip</h1>
-      <Form>
-        <Field component="input" type="text" name="title" placeholder="Title" />
+      <Form className="submit-a-trip-fields">
+        <Field
+          component="input"
+          type="text"
+          name="title"
+          placeholder="Title"
+          className="title-field"
+        />
         {touched.title && errors.title && (
           <p className="error">{errors.title}</p>
         )}
         <Field
-          component="input"
-          type="textArea"
+          component="textarea"
+          type="text"
           name="description"
           placeholder="Describe The Trip"
+          className="description-field"
         />
         {touched.description && errors.description && (
           <p className="error">{errors.description}</p>
         )}
-        <Field component="input" type="date" name="date" placeholder="date" />
-        <Field component="select" className="days-select" name="days">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10+">10+</option>
-        </Field>
-        <Field
-          component="select"
-          className="difficulty-select"
-          name="difficulty"
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </Field>
-        <button>Submit</button>
+        <div className="bottom-form-row">
+          <label className="form-label">
+            What Day Did You Start Your Trip?
+            <Field
+              component="input"
+              type="date"
+              name="date"
+              placeholder="date"
+              className="bottom-row-fields"
+            />
+          </label>
+          <label className="form-label">
+            How Many Days Did Your Trip Last?
+            <Field component="select" className="bottom-row-fields" name="days">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10+">10+</option>
+            </Field>
+          </label>
+          <label className="form-label">
+            How Would You Rate Your Trip?
+            <Field
+              component="select"
+              className="bottom-row-fields"
+              name="difficulty"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </Field>
+          </label>
+        </div>
+        <button className="submit-button">Save</button>
       </Form>
     </div>
   );
