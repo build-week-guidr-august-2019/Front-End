@@ -161,3 +161,24 @@ code {
     border-radius: 10px;
   }
 }
+
+// Login/Register
+
+.error {
+  background: #ff9bac;
+  color: #8e0a0a;
+  font-size: 13px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.login,
+.register {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("/img/login-register-bg.png") no-repeat center / cover;
+}
