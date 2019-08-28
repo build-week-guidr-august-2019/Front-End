@@ -1,15 +1,17 @@
 import React from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Segment } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import UserAuthFormik from "./UserAuthForm";
 
 const UserLogin = props => {
   return (
-    <Grid centered columns={2}>
+    <Grid centered columns={3} verticalAlign="middle">
       <Grid.Column>
-        <h2>Log In</h2>
-        <UserAuthFormik endpoint="login" buttonText="Log In" {...props} />
-        <Link to="/register">Register</Link>
+        <Segment className="loginSegment">
+          <h2>Log In</h2>
+          <UserAuthFormik endpoint="login" buttonText="Log In" {...props} />
+          <Link to="/register">Register</Link>
+        </Segment>
       </Grid.Column>
     </Grid>
   );
