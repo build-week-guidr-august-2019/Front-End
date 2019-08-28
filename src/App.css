@@ -13,5 +13,6 @@
 
 .login,
 .register {
-  height: 100vh;
+  height: 102vh; /* Getting phantom whitespace at the bottom */
+  background: url("/img/login-register-bg.png") no-repeat center / cover;
 }
