@@ -1,0 +1,163 @@
+body {
+  margin: auto !important;
+  font-family: "Rokkitt", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #cfc9b9 !important;
+  width: 90% !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+// Footer
+
+.footer-container {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background-color: #073422;
+
+  .copyright {
+    color: white;
+    font-size: 2rem;
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+}
+.footer-bottom {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+
+  .bottom-logo {
+    font-size: 4.5rem;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    padding-top: 20px;
+    padding-right: 40px;
+  }
+}
+
+.bottom-nav {
+  color: white;
+  list-style: none;
+  list-style-type: none;
+}
+.bottom-nav li {
+  list-style-type: none;
+  line-height: 30px;
+}
+
+.bottom-nav a {
+  color: #ffffff;
+}
+
+.bottom-nav a:hover {
+  color: #cacaca;
+}
+
+// Dashboard
+
+.dashboard-container {
+  width: 90%;
+  margin: auto;
+
+  .trip-list {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .intro-paragraph {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+}
+
+// Form Styling
+
+.submit-button {
+  width: 30%;
+  height: 60px;
+  background-color: #073422;
+  color: white;
+  margin: auto;
+  border-radius: 10px;
+  border: none;
+
+  &:hover {
+    color: black;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+.trip-create-form-container {
+  display: flex;
+  flex-flow: column;
+  padding-top: 60px;
+  margin: auto;
+
+  img {
+    height: 300px;
+    width: 500px;
+    margin: auto;
+  }
+
+  .submit-a-trip-fields {
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-family: "Rokkitt";
+  }
+
+  .title-field {
+    height: 60px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .description-field {
+    resize: both;
+    overflow: auto;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .bottom-form-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+  }
+
+  .bottom-row-fields {
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
+}
