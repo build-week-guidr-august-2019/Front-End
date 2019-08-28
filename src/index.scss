@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: auto !important;
 }
 
@@ -84,13 +85,18 @@ code {
     font-size: 1.5rem;
     margin-bottom: 40px;
   }
+
+  .trip {
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #c4c4c4;
+  }
 }
 
 // Form Styling
 
-.submit-button {
+.ui.button.submit-button {
   width: 30%;
-  height: 60px;
   background-color: #073422;
   color: white;
   margin: auto;

@@ -100,13 +100,13 @@ const newTripSubmission = withFormik({
     const trip = {
       user_id: 5,
       title: values.title,
-      shortDescription: "short description",
+      shortDescription: values.description.substring(0, 50) + "...",
       description: values.description,
       isProfessional: true,
       type: 1,
-      duration: 3,
+      duration: values.days,
       distance: 500,
-      date: "2018-11-01"
+      date: values.date
     };
 
     Axios.post("https://lambda-guidr.herokuapp.com/api/trip", trip).then(
