@@ -109,11 +109,9 @@ const newTripSubmission = withFormik({
       date: values.date
     };
 
-    Axios.post("https://lambda-guidr.herokuapp.com/api/trip", trip).then(
-      res => {
-        console.log(res);
-      }
-    );
+    Axios.post("/api/trip", trip).then(res => {
+      console.log(res);
+    });
     alert("Your trip has been accepted", JSON.stringify(values, null, 2));
     resetForm();
   }

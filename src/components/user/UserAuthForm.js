@@ -49,6 +49,7 @@ const UserAuthFormik = withFormik({
         if (response.data.token) {
           props.history.push("/dashboard");
         }
+        console.log(response);
       })
       .catch(error => {
         console.log(error);
