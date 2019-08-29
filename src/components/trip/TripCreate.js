@@ -106,10 +106,12 @@ const newTripSubmission = withFormik({
       type: 1,
       duration: values.days,
       distance: 500,
-      date: values.date
+      date: values.date,
+      image:
+        "https://images.unsplash.com/photo-1566996694954-90b052c413c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
     };
 
-    Axios.post("/api/trip", trip).then(res => {
+    Axios.post("/trip/", trip).then(res => {
       console.log(res);
     });
     alert("Your trip has been accepted", JSON.stringify(values, null, 2));
