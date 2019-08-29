@@ -98,7 +98,7 @@ const newTripSubmission = withFormik({
   }),
   handleSubmit(values, { setStatus, resetForm }) {
     const trip = {
-      user_id: 5,
+      user_id: window.localStorage.getItem("guidr_id"),
       title: values.title,
       shortDescription: values.description.substring(0, 50) + "...",
       description: values.description,
