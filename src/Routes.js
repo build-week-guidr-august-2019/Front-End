@@ -5,6 +5,9 @@ import UserCreate from "./components/user/UserCreate";
 import Dashboard from "./components/page/dashboard";
 import TripCreate from "./components/trip/TripCreate";
 import TripDetail from "./components/trip/TripDetail";
+import TripEdit from "./components/trip/TripEdit";
+import AboutGuidr from "./components/about/about";
+import CareerForm from "./components/about/careers";
 
 const Routes = () => {
   return (
@@ -14,6 +17,9 @@ const Routes = () => {
       <Route path="/dashboard" exact component={Dashboard} />
       <Route path="/trips/add" exact component={TripCreate} />
       <Route path="/trips/:id" component={TripDetail} />
+      <Route path="/trips/:id/edit" exact component={TripEdit} />
+      <Route path="/about" component={AboutGuidr} />
+      <Route path="/careers" component={CareerForm} />
     </>
   );
 };
