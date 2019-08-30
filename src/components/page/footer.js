@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Footer(props) {
   return (
@@ -7,13 +8,13 @@ function Footer(props) {
         <div className="bottom-nav">
           <ul>
             <li>
-              <a href="/about">About Guidr</a>
+              <NavLink to="/about">About Guidr</NavLink>
             </li>
             <li>
-              <a href="/careers">Work For Guidr</a>
+              <NavLink to="/careers">Work For Guidr</NavLink>
             </li>
             <li>
-              <a href="become-a-guide">Become A Guide</a>
+              <NavLink to="become-a-guide">Become A Guide</NavLink>
             </li>
           </ul>
         </div>

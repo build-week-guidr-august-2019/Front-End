@@ -9,7 +9,7 @@ const Header = props => {
   };
 
   return (
-    <Menu>
+    <Menu className="menu-width">
       <Menu.Item as={NavLink} name="Dashboard" to="/dashboard" exact />
       <Menu.Item as={NavLink} name="add trip" to="/trips/add" icon="plus" />
       <Menu.Item
