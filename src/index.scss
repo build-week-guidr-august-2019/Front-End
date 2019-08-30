@@ -242,6 +242,14 @@ code {
   .profile-pic {
     width: 40%;
   }
+
+  .about-guidr-content {
+    font-size: 2rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
 }
 
 // Career Page
@@ -303,5 +311,17 @@ code {
     border-radius: 10px;
     margin: auto;
     margin-bottom: 20px;
+  }
+}
+
+// Become Guide
+
+.guidr-container {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .guidr-intro-content {
+    font-size: 2.2rem;
   }
 }

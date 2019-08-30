@@ -8,6 +8,7 @@ import TripDetail from "./components/trip/TripDetail";
 import TripEdit from "./components/trip/TripEdit";
 import AboutGuidr from "./components/about/about";
 import CareerForm from "./components/about/careers";
+import BecomeAGuide from "./components/about/guide";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
       <Route path="/trips/:id/edit" exact component={TripEdit} />
       <Route path="/about" component={AboutGuidr} />
       <Route path="/careers" component={CareerForm} />
+      <Route path="/become-a-guide" component={BecomeAGuide} />
     </>
   );
 };
