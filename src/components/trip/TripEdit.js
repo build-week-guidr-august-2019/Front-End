@@ -5,9 +5,7 @@ import * as Yup from "yup";
 
 import newTrip from "../../img/trip-pic-1.jpg";
 
-// Include TripForm and any trip creation specific logic.
-
-const TripEdit = ({ errors, touched, values, status }) => {
+const TripEdit = ({ errors, touched, values, status, match }) => {
   return (
     <div className="trip-create-form-container">
       <img src={newTrip}></img>
@@ -96,7 +94,7 @@ const tripEdit = withFormik({
       .required("Please enter a description")
       .min(200, "200 characters required")
   }),
-  handleSubmit(values, { setStatus, resetForm }) {
+  handleSubmit(values, { setStatus, resetForm, props }) {
     const trip = {
       user_id: window.localStorage.getItem("guidr_id"),
       title: values.title,
@@ -109,10 +107,11 @@ const tripEdit = withFormik({
       date: values.date
     };
 
-    Axios.put("/trip/:id", trip).then(res => {
+    const id = props.match.params.id;
+
+    Axios.put(`/trip/${id}`, trip).then(res => {
       console.log(res);
     });
-    alert("Your trip has been accepted", JSON.stringify(values, null, 2));
     resetForm();
   }
 });
