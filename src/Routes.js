@@ -6,7 +6,7 @@ import Dashboard from "./components/page/dashboard";
 import TripCreate from "./components/trip/TripCreate";
 import TripDetail from "./components/trip/TripDetail";
 
-const isLoggedIn = false;
+const isLoggedIn = true;
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return (
