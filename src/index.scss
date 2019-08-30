@@ -19,7 +19,12 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh !important;
+<<<<<<< HEAD
   min-width: 100% !important;
+=======
+  font-size: 16px !important;
+  color: #073422;
+>>>>>>> 22c885b93635603b6a10c5a5168fb5963271cfa7
 }
 
 code {
@@ -353,6 +358,7 @@ code {
   }
 }
 
+<<<<<<< HEAD
 // Become Guide
 
 .guidr-container {
@@ -364,5 +370,14 @@ code {
 
   .guidr-intro-content {
     font-size: 2.2rem;
+=======
+// Trip Detail
+
+.list {
+  .item {
+    &:before {
+      content: "> ";
+    }
+>>>>>>> 22c885b93635603b6a10c5a5168fb5963271cfa7
   }
 }

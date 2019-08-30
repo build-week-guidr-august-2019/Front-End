@@ -1,19 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility
-} from "semantic-ui-react";
+import { Button, Container, Grid, Image } from "semantic-ui-react";
 import trip1 from "../../img/trip1.JPG";
 import Axios from "axios";
 import { Link } from "react-router-dom";

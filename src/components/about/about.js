@@ -6,8 +6,8 @@ const AboutGuidr = () => {
   return (
     <div className="about-container">
       <div className="guidr-dudes">
-        <img className="profile-pic" src={zach}></img>
-        <img className="profile-pic" src={colby}></img>
+        <img className="profile-pic" src={zach} alt="Zach Taylor"></img>
+        <img className="profile-pic" src={colby} alt="Colby Howell"></img>
       </div>
       <div className="about-guidr-content">
         <h1>What Is Guidr?</h1>
