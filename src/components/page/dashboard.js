@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container, Grid, Image } from "semantic-ui-react";
+import { Button, Container, Grid, Image, Header } from "semantic-ui-react";
 import trip1 from "../../img/trip1.JPG";
 import Axios from "axios";
 import { Link } from "react-router-dom";
