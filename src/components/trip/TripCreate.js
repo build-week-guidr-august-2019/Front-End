@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Form, Field, withFormik } from "formik";
 import Axios from "axios";
 import * as Yup from "yup";
-
 import newTrip from "../../img/trip-pic-1.jpg";
-
-// Include TripForm and any trip creation specific logic.
 
 const TripCreate = ({ errors, touched, values, status }) => {
   return (
     <div className="trip-create-form-container">
-      <img src={newTrip}></img>
+      <img src={newTrip} alt="New Trip"></img>
       <h1>Create A Trip</h1>
       <Form className="submit-a-trip-fields">
         <Field

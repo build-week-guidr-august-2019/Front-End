@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import UserLogin from "./components/user/UserLogin";
 import UserCreate from "./components/user/UserCreate";
@@ -33,7 +33,7 @@ const Routes = () => {
       <PrivateRoute path="/register" exact component={UserCreate} />
       <PrivateRoute path="/dashboard" exact component={Dashboard} />
       <PrivateRoute path="/trips/add" exact component={TripCreate} />
-      <PrivateRoute path="/trips/:id" component={TripDetail} />
+      <PrivateRoute path="/trips/:id" exact component={TripDetail} />
       <Route path="/trips/:id/edit" exact component={TripEdit} />
       <Route path="/about" component={AboutGuidr} />
       <Route path="/careers" component={CareerForm} />

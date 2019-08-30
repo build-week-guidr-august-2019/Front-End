@@ -1,10 +1,9 @@
-import React, { Switch } from "react";
+import React from "react";
 import { withRouter } from "react-router";
 import Routes from "./Routes";
 import Header from "./components/page/Header";
 import Footer from "./components/page/footer";
 import "semantic-ui-css/semantic.min.css";
-import "./App.css";
 
 const exclusionaryArray = ["/login", "/register"];
 
