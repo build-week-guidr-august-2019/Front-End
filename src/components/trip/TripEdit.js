@@ -8,7 +8,7 @@ import newTrip from "../../img/trip-pic-1.jpg";
 const TripEdit = ({ errors, touched, values, status, match }) => {
   return (
     <div className="trip-create-form-container">
-      <img src={newTrip}></img>
+      <img src={newTrip} alt="Edit Trip Photo"></img>
       <h1>Edit Your Trip</h1>
       <Form className="submit-a-trip-fields">
         <Field

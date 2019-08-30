@@ -6,7 +6,11 @@ import careerPic from "../../img/careers.jpg";
 const CareerForm = ({ errors, touched, values, status }) => {
   return (
     <div className="career-form">
-      <img className="career-image" src={careerPic}></img>
+      <img
+        className="career-image"
+        src={careerPic}
+        alt="Careers at Guidr"
+      ></img>
       <h1>Work For Us!</h1>
       <Form className="work-for-guidr">
         <Field
