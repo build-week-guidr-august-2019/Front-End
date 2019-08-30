@@ -98,7 +98,7 @@ const newTripSubmission = withFormik({
   }),
   handleSubmit(values, { setStatus, resetForm }) {
     const trip = {
-      user_id: 5,
+      user_id: window.localStorage.getItem("guidr_id"),
       title: values.title,
       shortDescription: values.description.substring(0, 50) + "...",
       description: values.description,
@@ -106,14 +106,14 @@ const newTripSubmission = withFormik({
       type: 1,
       duration: values.days,
       distance: 500,
-      date: values.date
+      date: values.date,
+      image:
+        "https://images.unsplash.com/photo-1566996694954-90b052c413c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
     };
 
-    Axios.post("https://lambda-guidr.herokuapp.com/api/trip", trip).then(
-      res => {
-        console.log(res);
-      }
-    );
+    Axios.post("/trip/", trip).then(res => {
+      console.log(res);
+    });
     alert("Your trip has been accepted", JSON.stringify(values, null, 2));
     resetForm();
   }

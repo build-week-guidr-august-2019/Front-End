@@ -15,6 +15,7 @@ axios.interceptors.response.use(res => {
   // Add it to storage
   if (res.data.token) {
     localStorage.setItem("token", res.data.token);
+    localStorage.setItem("guidr_id", res.data.id);
   }
   return res;
 });

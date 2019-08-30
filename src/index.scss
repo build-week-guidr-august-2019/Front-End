@@ -12,6 +12,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #cfc9b9 !important;
   width: 90% !important;
+  display: flex;
+  flex-direction: column;
+  height: 100vh !important;
 }
 
 code {
@@ -24,9 +27,11 @@ code {
 .footer-container {
   margin-top: 40px;
   left: 0;
+  right: 0;
+  bottom: 0;
   position: absolute;
   width: 100%;
-  height: 200px;
+  height: 150px;
   background-color: #073422;
 
   .copyright {
@@ -95,13 +100,15 @@ code {
 
 // Form Styling
 
-.ui.button.submit-button {
+.submit-button {
   width: 30%;
   background-color: #073422;
   color: white;
   margin: auto;
   border-radius: 10px;
   border: none;
+  height: 60px;
+  font-size: 2rem;
 
   &:hover {
     color: black;
@@ -223,4 +230,78 @@ code {
 .register .ui.button.primary:focus {
   background-color: darken(#b3a88f, 20);
   margin: 0 auto;
+}
+
+// About Page
+
+.about-container {
+  .guidr-dudes {
+    display: flex;
+    justify-content: space-between;
+  }
+  .profile-pic {
+    width: 40%;
+  }
+}
+
+// Career Page
+
+.career-form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .career-image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .work-for-guidr {
+    display: flex;
+    flex-flow: column;
+    width: 60%;
+  }
+
+  .name-field {
+    height: 30px;
+    width: 40%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .why-work-here {
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  .enter-phone {
+    height: 30px;
+    width: 40%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .address-info {
+    height: 30px;
+    width: 40%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .state-select {
+    height: 30px;
+    width: 40%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
 }
