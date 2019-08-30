@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container, Grid, Image } from "semantic-ui-react";
+import { Button, Container, Grid, Image, Header } from "semantic-ui-react";
 import trip1 from "../../img/trip1.JPG";
 import Axios from "axios";
 import { Link } from "react-router-dom";
@@ -28,21 +28,23 @@ function Dashboard(props) {
         </p>
       </Container>
       <div className="trip-list">
-        <h2>Your Trips</h2>
+        <h1>Your Trips</h1>
         {trips.map(trip => {
           if (trips.indexOf(trip) % 2 === 0) {
             return (
-              <Grid className="trip" key={trip.id}>
-                <Grid.Column width={6}>
-                  <Image src={trip1} />
+              <Grid className="trip1" key={trip.id}>
+                <Grid.Column width={8}>
+                  <Image as={Link} to={`/trips/${trip.id}`} src={trip1} />
                 </Grid.Column>
-                <Grid.Column width={10}>
-                  <h2>{trip.title}</h2>
-                  <p>{trip.shortDescription}</p>
+                <Grid.Column width={8}>
+                  <a href={`/trips/${trip.id}`}>
+                    <Header as="h2">{trip.title}</Header>
+                  </a>
+                  <p className="short-description">{trip.shortDescription}</p>
                   <Button
                     as={Link}
                     to={`/trips/${trip.id}`}
-                    className="submit-button"
+                    className="view-trip-button"
                   >
                     View Trip
                   </Button>
@@ -51,20 +53,22 @@ function Dashboard(props) {
             );
           } else {
             return (
-              <Grid className="trip" key={trip.id}>
-                <Grid.Column width={10}>
-                  <h2>{trip.title}</h2>
-                  <p>{trip.shortDescription}</p>
+              <Grid className="trip2" key={trip.id}>
+                <Grid.Column width={8}>
+                  <a href={`/trips/${trip.id}`}>
+                    <Header as="h2">{trip.title}</Header>
+                  </a>
+                  <p className="short-description">{trip.shortDescription}</p>
                   <Button
                     as={Link}
                     to={`/trips/${trip.id}`}
-                    className="submit-button"
+                    className="view-trip-button"
                   >
                     View Trip
                   </Button>
                 </Grid.Column>
-                <Grid.Column width={6}>
-                  <Image src={trip1} />
+                <Grid.Column width={8}>
+                  <Image as={Link} to={`/trips/${trip.id}`} src={trip1} />
                 </Grid.Column>
               </Grid>
             );
