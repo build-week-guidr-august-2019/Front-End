@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field, withFormik } from "formik";
 import Axios from "axios";
 import * as Yup from "yup";
@@ -6,6 +6,22 @@ import * as Yup from "yup";
 import newTrip from "../../img/trip-pic-1.jpg";
 
 const TripEdit = ({ errors, touched, values, status, match }) => {
+  const id = match.params.id;
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [duration, setDuration] = useState("");
+
+  useEffect(() => {
+    Axios.get(`/trip/${id}`).then(res => {
+      console.log(res);
+      setTitle(res.data.title);
+      setDescription(res.data.description);
+      setDate(res.data.date);
+      setDuration(res.data.duration);
+    });
+  }, [id]);
+
   return (
     <div className="trip-create-form-container">
       <img src={newTrip} alt="Edit Trip"></img>
@@ -17,6 +33,7 @@ const TripEdit = ({ errors, touched, values, status, match }) => {
           name="title"
           placeholder="Title"
           className="title-field"
+          value={title}
         />
         {touched.title && errors.title && (
           <p className="error">{errors.title}</p>
@@ -27,6 +44,7 @@ const TripEdit = ({ errors, touched, values, status, match }) => {
           name="description"
           placeholder="Describe The Trip"
           className="description-field"
+          value={description}
         />
         {touched.description && errors.description && (
           <p className="error">{errors.description}</p>
@@ -40,11 +58,17 @@ const TripEdit = ({ errors, touched, values, status, match }) => {
               name="date"
               placeholder="date"
               className="bottom-row-fields"
+              value={date}
             />
           </label>
           <label className="form-label">
             How Many Days Did Your Trip Last?
-            <Field component="select" className="bottom-row-fields" name="days">
+            <Field
+              component="select"
+              className="bottom-row-fields"
+              name="days"
+              selected={date}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
