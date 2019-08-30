@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container, Grid, Image } from "semantic-ui-react";
+import { Button, Container, Grid, Image, Header } from "semantic-ui-react";
 import trip1 from "../../img/trip1.JPG";
 import Axios from "axios";
 import { Link } from "react-router-dom";
@@ -34,16 +34,20 @@ function Dashboard(props) {
             return (
               <Grid className="trip1" key={trip.id}>
                 <Grid.Column width={8}>
-                  <Image as={Link} to={`/trips/${trip.id}`} src={trip1} />
+                  <Image
+                    as={Link}
+                    to={`/trips/${trip.id}/detail`}
+                    src={trip1}
+                  />
                 </Grid.Column>
                 <Grid.Column width={8}>
-                  <a href={`/trips/${trip.id}`}>
+                  <a href={`/trips/${trip.id}/detail`}>
                     <Header as="h2">{trip.title}</Header>
                   </a>
                   <p className="short-description">{trip.shortDescription}</p>
                   <Button
                     as={Link}
-                    to={`/trips/${trip.id}`}
+                    to={`/trips/${trip.id}/detail`}
                     className="view-trip-button"
                   >
                     View Trip
@@ -55,20 +59,24 @@ function Dashboard(props) {
             return (
               <Grid className="trip2" key={trip.id}>
                 <Grid.Column width={8}>
-                  <a href={`/trips/${trip.id}`}>
+                  <a href={`/trips/${trip.id}/detail`}>
                     <Header as="h2">{trip.title}</Header>
                   </a>
                   <p className="short-description">{trip.shortDescription}</p>
                   <Button
                     as={Link}
-                    to={`/trips/${trip.id}`}
+                    to={`/trips/${trip.id}/detail`}
                     className="view-trip-button"
                   >
                     View Trip
                   </Button>
                 </Grid.Column>
                 <Grid.Column width={8}>
-                  <Image as={Link} to={`/trips/${trip.id}`} src={trip1} />
+                  <Image
+                    as={Link}
+                    to={`/trips/${trip.id}/detail`}
+                    src={trip1}
+                  />
                 </Grid.Column>
               </Grid>
             );
