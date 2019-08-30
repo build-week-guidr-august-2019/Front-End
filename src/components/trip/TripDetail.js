@@ -13,7 +13,7 @@ const TripDetail = props => {
       console.log(res);
       setTrip(res.data);
     });
-  }, []);
+  }, [id]);
 
   return (
     <Grid columns={2} centered>

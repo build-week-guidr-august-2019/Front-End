@@ -1,4 +1,4 @@
-import React, { Switch } from "react";
+import React from "react";
 import { withRouter } from "react-router";
 import Routes from "./Routes";
 import Header from "./components/page/Header";
