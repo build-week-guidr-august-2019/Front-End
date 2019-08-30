@@ -44,7 +44,7 @@ function Dashboard(props) {
       <div className="trip-list">
         <h2>Your Trips</h2>
         {trips.map(trip => {
-          if (trips.indexOf(trip) / 2 === 0) {
+          if (trips.indexOf(trip) % 2 === 0) {
             return (
               <Grid className="trip" key={trip.id}>
                 <Grid.Column width={6}>
