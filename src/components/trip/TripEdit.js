@@ -5,23 +5,32 @@ import * as Yup from "yup";
 
 import newTrip from "../../img/trip-pic-1.jpg";
 
-const TripEdit = ({ errors, touched, values, status, match }) => {
+const TripEdit = ({
+  errors,
+  touched,
+  values,
+  status,
+  match,
+  handleChange,
+  setFieldValue
+}) => {
   const id = match.params.id;
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [date, setDate] = useState("");
-  const [duration, setDuration] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [date, setDate] = useState("");
+  // const [duration, setDuration] = useState("");
 
   useEffect(() => {
     Axios.get(`/trip/${id}`).then(res => {
       console.log(res);
-      setTitle(res.data.title);
-      setDescription(res.data.description);
-      setDate(res.data.date);
-      setDuration(res.data.duration);
+      setFieldValue("title", res.data.title);
+      setFieldValue("description", res.data.description);
+      setFieldValue("date", res.data.date);
+      setFieldValue("duration", res.data.duration);
     });
   }, [id]);
 
+  console.log(setFieldValue);
   return (
     <div className="trip-create-form-container">
       <img src={newTrip} alt="Edit Trip"></img>
@@ -33,7 +42,8 @@ const TripEdit = ({ errors, touched, values, status, match }) => {
           name="title"
           placeholder="Title"
           className="title-field"
-          value={title}
+          value={values.title}
+          onChange={handleChange}
         />
         {touched.title && errors.title && (
           <p className="error">{errors.title}</p>
@@ -44,7 +54,8 @@ const TripEdit = ({ errors, touched, values, status, match }) => {
           name="description"
           placeholder="Describe The Trip"
           className="description-field"
-          value={description}
+          value={values.description}
+          onChange={handleChange}
         />
         {touched.description && errors.description && (
           <p className="error">{errors.description}</p>
@@ -58,7 +69,8 @@ const TripEdit = ({ errors, touched, values, status, match }) => {
               name="date"
               placeholder="date"
               className="bottom-row-fields"
-              value={date}
+              value={values.date}
+              onChange={handleChange}
             />
           </label>
           <label className="form-label">
@@ -66,8 +78,10 @@ const TripEdit = ({ errors, touched, values, status, match }) => {
             <Field
               component="select"
               className="bottom-row-fields"
-              name="days"
-              selected={date}
+              name="duration"
+              selected={values.duration}
+              value={values.duration}
+              onChange={handleChange}
             >
               <option value="1">1</option>
               <option value="2">2</option>
